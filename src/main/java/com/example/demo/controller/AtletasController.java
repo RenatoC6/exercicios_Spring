@@ -17,8 +17,10 @@ public class AtletasController {
 
     @PutMapping("/associar-time")
     public ResponseEntity<?> associarTimeAoAtleta(@RequestBody AtletasTimeUpdateRequestDto atletasTimeUpdateRequestDto) {
-            String mensagem = atletasService.associarTimeAoAtleta(atletasTimeUpdateRequestDto.getIdAtleta(), atletasTimeUpdateRequestDto.getIdTime());
-            return ResponseEntity.status(HttpStatus.OK).body(mensagem);
+            AtletasModel atletasModel = atletasService.associarTimeAoAtleta(atletasTimeUpdateRequestDto.getIdAtleta(), atletasTimeUpdateRequestDto.getIdTime());
+
+            return ResponseEntity.status(HttpStatus.OK).body("Atleta " + atletasModel.getNome() + " atualizado para time do " + atletasModel.getTime().getNome() + " com sucesso!");
+
 
 
     }
