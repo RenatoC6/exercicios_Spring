@@ -15,13 +15,19 @@ public class AtletasModel implements Serializable {
     private String nome;
     private String posicao;
 
+
+    @ManyToOne
+    @JoinColumn(name = "time_id")
+    private TimesModel time;
+
+
     public void setTime(TimesModel time) {
         this.time = time;
     }
 
-    @OneToOne
-    @JoinColumn(name = "id_time")
-    private TimesModel time;
+    public TimesModel getTime() {
+        return time;
+    }
 
     public Long getId() {
         return id;

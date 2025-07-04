@@ -3,7 +3,7 @@ package com.example.demo.dto;
 import com.example.demo.model.AtletasModel;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
 public class AtletasTimeUpdateRequestDto {
 
     private Long idAtleta;
